@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Saludable</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <!-- Encabezado y Navegación -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Clínica Saludable</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Equipo Médico</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">Agendar Cita</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">Bienvenidos a Clínica Saludable</h1>
+                <p class="lead">Cuidamos tu salud con los mejores especialistas y tecnología avanzada.</p>
+                <a href="#" class="btn btn-light btn-lg">Conoce nuestros servicios</a>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section class="py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Nuestros Servicios</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Consultas Generales</h5>
+                                <p class="card-text">Atención médica personalizada para toda la familia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Exámenes de Laboratorio</h5>
+                                <p class="card-text">Resultados precisos y confiables para tu diagnóstico.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Especialidades Médicas</h5>
+                                <p class="card-text">Consulta con los mejores especialistas en cada área.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="bg-light py-5">
+            <div class="container text-center">
+                <h2 class="mb-4">Lo que dicen nuestros pacientes</h2>
+                <blockquote class="blockquote">
+                    <p class="mb-0">"La atención fue excelente, y los médicos son muy profesionales."</p>
+                    <footer class="blockquote-footer">Paciente satisfecho</footer>
+                </blockquote>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; 2025 Clínica Saludable. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
