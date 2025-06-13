@@ -1,0 +1,14 @@
+{% extends 'home/home.html' %}
+
+{% block content %}
+
+    {% for user in users %}
+        <div class="post">
+            <div class="date">
+                <p>{{ user.username }}</p>
+            </div>
+            <h2><a href="{% url 'user_details' user_id=user.user_id %}">{{ user.email }}</a></h2>
+        </div>
+    {% endfor %}
+
+{% endblock %}

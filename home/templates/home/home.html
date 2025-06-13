@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Clínica Saludable</a>
+                <a class="navbar-brand" href="/">Clínica Saludable</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -25,8 +25,8 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Equipo Médico</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'show_users' %}">Equipo Médico</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'create_user' %}">Agregar</a></li>
                         <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">Agendar Cita</a>
                         </li>
                     </ul>
@@ -37,7 +37,7 @@
 
     <!-- Contenido principal -->
     <main>
-        
+
         <!-- Hero Section -->
         <section class="bg-primary text-white text-center py-5">
             <div class="container">
@@ -47,49 +47,27 @@
             </div>
         </section>
 
-        <!-- Sección de Servicios -->
-        <section class="py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Nuestros Servicios</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Consultas Generales</h5>
-                                <p class="card-text">Atención médica personalizada para toda la familia.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Exámenes de Laboratorio</h5>
-                                <p class="card-text">Resultados precisos y confiables para tu diagnóstico.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
-                                <h5 class="card-title">Especialidades Médicas</h5>
-                                <p class="card-text">Consulta con los mejores especialistas en cada área.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="container">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        <!-- Testimonios -->
-        <section class="bg-light py-5">
-            <div class="container text-center">
-                <h2 class="mb-4">Lo que dicen nuestros pacientes</h2>
-                <blockquote class="blockquote">
-                    <p class="mb-0">"La atención fue excelente, y los médicos son muy profesionales."</p>
-                    <footer class="blockquote-footer">Paciente satisfecho</footer>
-                </blockquote>
-            </div>
-        </section>
+        <div
+            class="container"
+        >
+            {% block content %}
+            {% endblock %}
+        </div>
+        
+
     </main>
 
     <!-- Pie de Página -->
