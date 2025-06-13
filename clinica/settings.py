@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     # Custom apps
     'user.apps.UserConfig',
     'home.apps.HomeConfig',
+    'office.apps.OfficeConfig',
+    'appointment.apps.AppointmentConfig',
 ]
 
 MIDDLEWARE = [

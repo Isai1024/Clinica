@@ -14,7 +14,6 @@ def user_details(request, user_id):
     
     form.fields['first_name'].initial = user.first_name
     form.fields['last_name'].initial = user.last_name
-    form.fields['username'].initial = user.username
     form.fields['email'].initial = user.email
     
     return render(request, 'user/user_form.html', {'form': form})
@@ -24,7 +23,6 @@ def create_user(request):
         
         first_name = request.POST.get('first_name')
         last_name = request.POST.get('last_name')
-        username = request.POST.get('username')
         email = request.POST.get('email')
         
         password = request.POST.get('password')
@@ -39,7 +37,6 @@ def create_user(request):
         user = User(
             first_name=first_name,
             last_name=last_name,
-            username=username,
             email=email,
             encrypted_password=encrypted_password,
             salt=salt
