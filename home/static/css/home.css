@@ -21,3 +21,7 @@ footer {
     text-decoration: underline;
     color: #0a0505;
 }
+
+.bg-red {
+    background-color: #df0808;
+}

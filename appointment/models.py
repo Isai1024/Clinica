@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Appointment(models.Model):
-    appointment_id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     
     patient = models.ForeignKey('user.User', on_delete=models.CASCADE, related_name='appointments')
     doctor = models.ForeignKey('user.User', on_delete=models.CASCADE, related_name='doctor_appointments')
@@ -20,4 +20,4 @@ class Appointment(models.Model):
         ordering = ['appointment_date']
     
     def __str__(self):
-        return f"Appointment {self.appointment_id} - {self.patient.first_name} with {self.doctor.first_name} on {self.appointment_date}"
+        return f"Appointment {self.id} - {self.patient.first_name} with {self.doctor.first_name} on {self.appointment_date}"

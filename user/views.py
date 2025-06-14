@@ -8,8 +8,8 @@ def show_users(request):
     users = User.objects.all()
     return render(request, 'home/calendar.html', {'users': users})
 
-def user_details(request, user_id):
-    user = User.objects.get(user_id=user_id)
+def user_details(request, id):
+    user = User.objects.get(id=id)
     form = UserForm()
     
     form.fields['first_name'].initial = user.first_name
@@ -21,26 +21,12 @@ def user_details(request, user_id):
 def create_user(request):
     if request.method == 'POST':
         
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
-        email = request.POST.get('email')
-        
-        password = request.POST.get('password')
-
-        bytes = password.encode('utf-8')
-        salt = bcrypt.gensalt()
-        hash = bcrypt.hashpw(bytes, salt)
-
-        encrypted_password = hash
-        salt = salt
-        
-        user = User(
-            first_name=first_name,
-            last_name=last_name,
-            email=email,
-            encrypted_password=encrypted_password,
-            salt=salt
-        ).save()
+        user = User.objects.create_user(
+            email=request.POST.get('email'),
+            first_name=request.POST.get('first_name'),
+            last_name=request.POST.get('last_name'),
+            password=request.POST.get('password')
+        )
 
         return render(request, 'home/calendar.html', {'user': user})
     else:
