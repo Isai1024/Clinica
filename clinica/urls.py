@@ -23,13 +23,13 @@ from home.views import home_view, login_view, logout_view as logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('', home_view, name='home'),
     path('login/', login_view, name='login'),
     path('logout_session/', logout, name='logout_session'),
     
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    
-    path('', home_view, name='home'),
     
     path('appointments/', include('appointment.urls')),
     path('user/', include('user.urls')),

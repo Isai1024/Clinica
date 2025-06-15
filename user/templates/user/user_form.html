@@ -1,6 +1,6 @@
 {% extends 'home/home.html' %}
 
-{% block content %}
+{% block UserForm %}
     <h2>New user</h2>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}

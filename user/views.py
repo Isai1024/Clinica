@@ -1,5 +1,4 @@
-from django.shortcuts import render
-import bcrypt
+from django.shortcuts import render, redirect
 from .models import User
 from .forms import UserForm
 
@@ -28,7 +27,7 @@ def create_user(request):
             password=request.POST.get('password')
         )
 
-        return render(request, 'home/calendar.html', {'user': user})
+        return redirect('/', id=user.id)
     else:
         form = UserForm()
     return render(request, 'user/user_form.html', {'form': form})
